@@ -96,4 +96,95 @@ Invectory vector message comes in response to all messages related to informatio
 |  | `object_queryhash` | request hash
 
 
+
+### Needupdate
+When your node connects to the active node, after the exchange of version-verask messages, if your block is out of date, the node sends you the needupdate message, after which you need to send getblocks, with the top hash of your node.
+
+| Command | param name | param description |
+|---------|------------|-------------------|
+| needupdate |  `Lastblock.height`   | Top height of sender |
+|  |  `Lastblock.hash`   | Top hash of sender |
+|  |  `nodes`   | List of connected active nodes |
+
+### getblocks
+
+After sending this message in response comes an inventory vector with a list of hashes of blocks.
+
+
+| Command | param name | param description |
+|---------|------------|-------------------|
+| getblocks |  `headhash`   | start hash |
+|  |  `offset`   | offset in common list |
  
+ 
+ ### getblockdata
+
+After sending this message, an inventory vector comes with full block data in response
+
+
+| Command | param name | param description |
+|---------|------------|-------------------|
+| getblockdata |  `Hash`   |  hash of block |
+
+
+
+ ### gettx
+
+After sending this message, an inventory vector comes with a list of transaction hashes from mempool (unconfirmed tx list)
+
+
+| Command | param name | param description |
+|---------|------------|-------------------|
+| gettx |  `count`   |  count of transaction vector |
+|  |  `offset`   |  offset in common vector |
+
+
+
+ ### gettxdata
+
+After sending this message, an inventory vector with complete transaction data comes in response
+
+
+| Command | param name | param description |
+|---------|------------|-------------------|
+| gettx |  `Hash`   |  hash of tx from mempool |
+
+
+ ### democracy.new
+
+New voting on the network. Read more in the section democracy.
+
+
+| Command | param name | param description |
+|---------|------------|-------------------|
+| democracy.new |  `id`   |  unique id of voting |
+|  |  `type`   | script name or question |
+|  |  `params`   |  another params to script or vote |
+
+
+  ### democracy.answer
+
+Reply to the vote (only for the node that created a vote with this id). Read more in the section democracy.
+
+
+| Command | param name | param description |
+|---------|------------|-------------------|
+| democracy.answer |  `id`   |  unique id of voting |
+|  |  `nodeName`   | voted node id in network |
+|  |  `answer`   |  result of node |
+
+  ### democracy.end
+
+Summing up the voting results. Read more in the section democracy.
+
+
+| Command | param name | param description |
+|---------|------------|-------------------|
+| democracy.end |  `id`   |  unique id of voting |
+|  |  `reason`   | end reason `timedout|reached` |
+|  |  `sign`   |  voting data signature 0 by the node key that created the vote |
+|  |  `result`   |  the final balanced result of voting |
+|  |  `type`   |  script or question |
+|  |  `details.all`   |  statistics, total connected nodes |
+|  |  `details. answered`   |  total answers |
+|  |  `details. persent`   |  the ratio of all to answered is in percent |
