@@ -1,4 +1,4 @@
-# Datascript overview
+# Datascript consensus
 
 The general principle of datascript operation is described in the chapter with the same name, and the rules for checking new datascript are described in the previous chapter about the validation of transactions.
 
