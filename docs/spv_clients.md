@@ -22,3 +22,11 @@ In addition, to identify the end of the search for 500 blocks, the light client 
 The fields `proofs` and `flags` are arrays, which is necessary when there are several transactions associated with the filter in the block.
 
 Ultimately, merkleblock does not send a complete list of transaction hashes to the block, but only those associated with the filter (if any, otherwise it does not send the block). After receiving and verifying related transactions, an easy client can receive transaction data with a `gettxdata` message, as with unconfirmed transactions.
+
+## Format of hex-serialized filter
+The filter is serialized on the Orwell network for ease of transmission and is in fact a uint8 vector of elements + complemented by filter parameters.
+
+| Count of items | Filter item 1 | Filter item 2 | nHashFuncs | nTweak | nFlags |
+|-|-|-|-|-|- |
+| var_int | uint8 | uint8 | uint32 | uint32 | uint8 |
+| Number of elements | Filter value | Filter value | Count of hash functions  | Flags | Flags |
