@@ -1,6 +1,6 @@
 # SPV light clients
 
-The Orwell network is ready to use spv wallets. In addition, the official spv wallet is already released as an application and is beta tested.
+The Orwell network is ready to use spv wallets. In addition, the official spv wallet is already [released as an application and is beta tested](https://github.com/gettocat/orwell-spv).
 
 For the operation of light wallets, several messages have been added to the Orwell network:
 
