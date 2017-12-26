@@ -43,3 +43,21 @@ Next rules only for transaction with local domain content:
 | isValidAddress | The address must be in the orwell format (bitcoin format).
 | isValidDomain | The domain must match the format: Only Latin characters and the symbol `.` (Dot) are allowed. The length can be from 3 to 255 characters inclusive. The first and last character can not be a dot, just you can not use several points in a row in the domain (like `...`).
 | CheckDomainHistory | If the given domain already exists in the database - check that the current public key of the sender is the public key of the domain owner (the owner is the first one). The domain must be unique throughout the network. |
+
+
+Rules for validation new blocks in the orwell network:
+
+
+| Name  | Description
+|- |-
+| previousblockexists | The presence of a parent block, which is referenced by the checked block in the main block. If this block is not in the blockchain - check in the orphan pool. This block, in the absence of the parent in the main pool - we add to the orphan pool. Blocks from the orphan pool are deleted if their height is less than top height by 100.
+| merklerootisvalid | The Merkle tree for transactions is built correctly and takes into account all transactions.
+| hashvalid | Hash, calculated by blockheader Should be equal to what we got in the block data
+| hashhightthentarget | The hash of the current block must be less than the target block
+| targetisfromconsensus | The target of the current block must be correctly calculated (based on the previous 12 blocks).
+| blocktimeisvalid | The block time must meet the criteria (not lower than the average for the last 12 blocks, as well as no higher than 7 days from the most recent block)
+| blockversionisvalid | version of the block must be supported
+| isvalidtx | All transactions in the list must be verified and fully successfull validated
+| checkpoints | The block tree must converge with the developer's control points
+| doublespent | Within the same block, there should not be a double use of the same utxo.
+| coinbasevaluefromconsensus | The fee per block must be equal to the current emitted value for a given block height
