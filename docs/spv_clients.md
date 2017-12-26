@@ -28,5 +28,5 @@ The filter is serialized on the Orwell network for ease of transmission and is i
 
 | Count of items | Filter item 1 | Filter item 2 | nHashFuncs | nTweak | nFlags |
 |-|-|-|-|-|- |
-| var_int | uint8 | uint8 | uint32 | uint32 | uint8 |
+| `var_int` | `uint8` | `uint8` | `uint32` | `uint32` | `uint8` |
 | Number of elements | Filter value | Filter value | Count of hash functions  | Flags | Flags |
