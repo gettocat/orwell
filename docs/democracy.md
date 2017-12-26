@@ -1,3 +1,5 @@
+[Back to intro](https://github.com/gettocat/orwell/blob/master/docs/intro.md)
+
 # Democracy
 
 The democracy module determines the average opinion of the majority, at the moment it is used to determine the average time of the network (due to differences in time zones for different nodes), as well as to obtain an average consensus status in the network.

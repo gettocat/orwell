@@ -1,3 +1,5 @@
+[Back to intro](https://github.com/gettocat/orwell/blob/master/docs/intro.md)
+
 # jsonhex
 Algorithm for writing structured data in byte-sequence and vice versa. Its difference from json is that it takes up less space, which is important for decentralized algorithms, and also has built-in data integrity control.
 The main essence of this algorithm: a serialized object is a byte sequence containing a set of primitives with the following order of bytes:

@@ -1,3 +1,5 @@
+[Back to intro](https://github.com/gettocat/orwell/blob/master/docs/intro.md)
+
 # Difficulty
 
 Difficulty in the orwell network is the same as in the bitcoin network, but with some additions. The maximum bits are `1d00ffff`, as in the bitcoin network, which corresponds to a complexity of `2^32` and a target value of `2^224`.
