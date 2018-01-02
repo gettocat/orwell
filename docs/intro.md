@@ -34,3 +34,4 @@ These data types are used in bitcoin to save space. They are also implemented in
 10. [Network Domains](https://github.com/gettocat/orwell/blob/master/docs/datascript_consensus.md)
 11. [SPV and light clients](https://github.com/gettocat/orwell/blob/master/docs/spv_clients.md)
 12. [Fees](https://github.com/gettocat/orwell/blob/master/docs/fees.md)
+13. [Commands to full node](https://github.com/gettocat/orwell/blob/master/docs/commands.md)
