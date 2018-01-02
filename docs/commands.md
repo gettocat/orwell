@@ -81,6 +81,7 @@ cli-wallet getpem <dbname> [datasetname]
 
 ### wallet
 ```
+cli-wallet importprivatekey <privatekey> [account = 0]
 cli-wallet dumpprivkey <address>
 cli-wallet getaccount <address>
 cli-wallet getaccountaddress <account_name>
@@ -138,7 +139,6 @@ cli-wallet decodescript <hex>
 cli-wallet backupwallet <path/to>
 cli-wallet dumpwallet <path/to>
 cli-wallet importwallet <path/from>
-cli-wallet importprivkey <key>
 cli-wallet getreceivedbyaccount <account_name> [confirmation=6]
 cli-wallet getreceivedbyaddress <address> [confirmation=6]
 cli-wallet getunconfirmedbalance
